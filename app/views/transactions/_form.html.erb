@@ -1,0 +1,23 @@
+<%= simple_form_for(@transaction) do |f| %>
+  <%
+    if @transaction.transaction_type == 'Payment'
+      button_text = 'Make Payment'
+    else
+      button_text = 'Withdraw Funds'
+    end
+  %>
+  <div class='mdl-card mdl-shadow--2dp mdl-card-default width-full'>
+    <div class='mdl-card__title'>
+      <h3 class='mdl-card__title-text'><%= button_text %></h3>
+    </div>
+    <div class='mdl-card__supporting-text'>
+      <%= f.hidden_field :account_id %>
+      <%= f.hidden_field :transaction_type %>
+      <%= f.input :amount, input_html: { class: 'mdl-textfield__input width-full' }, label: 'Amount', label_html: { class: 'mdl-textfield__label' }, wrapper_html: { class: 'mdl-textfield mdl-js-textfield mdl-textfield--floating-label width-full' } %>
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <%= f.button :submit, button_text, class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent' %>
+      <%= link_to "Cancel", @account, class: 'mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent' %>
+    </div>
+  </div>
+<% end %>

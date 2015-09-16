@@ -1,0 +1,126 @@
+body {
+  font-family: 'Fauna One', Georgia, serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', Georgia, serif;
+  text-shadow: 2px 1px 1px #ddd;
+  letter-spacing: 0.03em;
+}
+
+.page-content {
+  min-width: 80vw;
+  min-height: 80vh;
+  margin: 0px auto;
+}
+
+.mdl-card {
+  max-width: 1170px;
+  margin: 15px auto;
+  min-height: initial;
+}
+
+.mdl-card .mdl-card {
+  max-width:1100px;
+}
+
+.mdl-card .mdl-card.alert {
+  max-width: 1170px;
+  margin: 0px;
+}
+
+.mdl-card__title {
+  width: 100%;
+  background-color: whitesmoke;
+}
+
+.mdl-card__title h2 {
+  font-size: 2em;
+  color: black;
+  text-shadow: 2px 1px 1px black;
+}
+
+.mdl-card.width-full {
+  width: 100%;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.mdl-layout-title a, .mdl-layout-title a:visited {
+  color: white;
+}
+
+.mdl-mini-footer {
+  color: white;
+  padding: 16px;
+}
+
+.alert {
+  height: auto;
+  min-height: initial;
+  padding: 15px;
+  margin: 15px auto;
+  background-color: #ccc;
+  color: white;
+  display: inline-block;
+}
+
+.alert-danger {
+  background-color: red;
+}
+
+.alert-success {
+  background-color: green;
+}
+
+.float-right {
+  float: right
+}
+
+.float-left {
+  float: left
+}
+
+.mdl-layout__header {
+  background-color: initial;
+  background-image: linear-gradient(#04519b, #044687 60%, #033769);
+}
+
+.mdl-card__supporting-text {
+  width: 97%;
+  margin: 10px auto;
+  padding: 0px;
+}
+
+.mdl-button {
+  margin: 10px;
+}
+
+.transactions {
+  list-style-type: none;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.transaction {
+  width: 100%;
+  margin: 10px 0px;
+}
+
+.error {
+  color: red;
+  font-weight: 700;
+  margin-top: 10px;
+  display: block;
+}
+
+tr.withdrawal {
+  background-color: lightcoral;
+}
+
+tr.payment {
+  background-color: lightgreen;
+}

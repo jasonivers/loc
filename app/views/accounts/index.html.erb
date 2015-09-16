@@ -1,0 +1,33 @@
+<div class="width-full mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">New Account</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp width-full">
+      <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">ID</th>
+          <th class="mdl-data-table__cell--non-numeric">Balance</th>
+          <th class="mdl-data-table__cell--non-numeric">Credit Limit</th>
+          <th class="mdl-data-table__cell--non-numeric">APR</th>
+          <th class="mdl-data-table__cell--non-numeric">Payment Due</th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @accounts.each do |account| %>
+          <tr>
+            <td class="mdl-data-table__cell--non-numeric"><%= link_to account.id, account %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= number_to_currency(account.balance) %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= number_to_currency(account.credit_limit) %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= (account.apr * 100) %>%</td>
+            <td class="mdl-data-table__cell--non-numeric"><%= account.payment_due %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <%= link_to 'New Account', new_account_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="width-full mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Account <%= @account.id %></h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp width-full">
+      <% if not @account.transactions.blank? %>
+        <% @account.transactions.order("id desc").each do |transaction| %>
+          <tr class="<%= transaction.amount > 0 ? 'withdrawal' : 'payment' %>">
+            <td class="mdl-data-table__cell--non-numeric"><%= local_time(transaction.created_at) %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= transaction.transaction_type %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= number_to_currency(transaction.amount.abs) %></td>
+          </tr>
+        <% end %>
+      <% else %>
+          <tr><td colspan=3 class="mdl-data-table__cell--non-numeric">No transactions on this account.</td></tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <%= link_to 'Make Payment', "/accounts/#{@account.id}/payment", class: "mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
+    <%= link_to 'Take Out Money', "/accounts/#{@account.id}/withdrawal", class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
+    <%= link_to 'Back To Accounts', accounts_path, class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
+  </div>
+</div>

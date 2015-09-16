@@ -1,0 +1,27 @@
+  <div class='mdl-card mdl-shadow--2dp mdl-card-default width-full'>
+    <div class='mdl-card__title'>
+      <h3 class='mdl-card__title-text'>Sign Up</h3>
+    </div>
+    <div class='mdl-card__supporting-text'>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-input'}) do |f| %>
+        <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label width-full'>
+          <label class='mdl-textfield__label' for='email'>Email</label>
+          <input class='mdl-textfield__input' id='user_email' name="user[email]">
+        </div>
+        <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label width-full'>
+          <label class='mdl-textfield__label' for='name'>Name</label>
+          <input class='mdl-textfield__input' id='user_name' name="user[name]">
+        </div>
+        <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label width-full'>
+          <label class='mdl-textfield__label' for='password'>Password</label>
+          <input type='password' class='mdl-textfield__input' id='user_password' name="user[password]">
+        </div>
+        <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label width-full'>
+          <label class='mdl-textfield__label' for='password_confirmation'>Password Confirmation</label>
+          <input type='password' class='mdl-textfield__input' id='user_password_confirmation' name="user[password_confirmation]">
+        </div>
+        <div><button type="submit" class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent' id='sign_up'>Sign Up</button></div>
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>

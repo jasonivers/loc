@@ -1,0 +1,15 @@
+<div class="width-full mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">New Account</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    <h4>Terms And Conditions</h4>
+    <p>
+      Your new account will have a credit limit of $1,000, and an APR of 35%.  Interest is calculated every 30 days, but is calculated based on the daily balance.
+    </p>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <%= link_to 'Accept', accounts_path, method: :post, class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
+    <%= link_to 'Back', accounts_path, class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
+  </div>
+</div>

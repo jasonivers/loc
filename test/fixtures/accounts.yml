@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  balance: 9.99
+  credit_limit: 1
+  apr: 9.99
+  payment_due: 2015-09-14 13:02:45
+
+two:
+  user_id: 
+  balance: 9.99
+  credit_limit: 1
+  apr: 9.99
+  payment_due: 2015-09-14 13:02:45
